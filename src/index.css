@@ -37,6 +37,13 @@ body, html {
   opacity: 0.7;
 }
 
+.footer {
+  font-size: 10px;
+  height: 100px;
+  align-items: flex-end;
+  display: flex;
+}
+
 .parallax {
   /* The image used */
   background-image: url("assets/bookshelf.jpg");
@@ -49,4 +56,21 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.buy-item {
+  border-style: solid;
+  border-width: 1px;
+  padding: 22px;
+  border-radius: 20px;
+  margin-top: 5px;
+}
+
+.buy-item-name {
+  width: fit-content;
+}
+
+.buy-item-other {
+  width: fit-content;
+
 }
