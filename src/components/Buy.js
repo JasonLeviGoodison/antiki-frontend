@@ -11,23 +11,25 @@ import Contact from '../classes/Contact';
 class Buy extends Component {
     constructor(props) {
         super(props);
+        var fetchedItems = [
+            new Item('Item10', 1300, '100BC', new Contact('Jason', '', 'jasongoodisondevelopment@gmail.com')),
+            new Item('Item11', 130, '1990', new Contact('Sahir', '', 'sahir@gmail.com')),
+            // {'name': 'Item1', 'price': 14.50, 'date': '1945'},
+            // {'name': 'Item2', 'price': 1.50, 'date': 'Unknown'},
+            // {'name': 'Item3', 'price': 1400.50, 'date': '1200'},
+            // {'name': 'Item4', 'price': 14, 'date': '2012'},
+            // {'name': 'Item5', 'price': 1.50, 'date': '2018'},
+            // {'name': 'Item6', 'price': 1400.50, 'date': 'Unknown'},
+            // {'name': 'Item7', 'price': 1.50, 'date': 'Unknown'},
+            // {'name': 'Item8', 'price': 1400.50, 'date': 'Unknown'},
+            // {'name': 'Item9', 'price': 1.50, 'date': 'Unknown'},
+            // {'name': 'Item10', 'price': 1400.50, 'date': 'Unknown'},
+        ];
         this.state = {
-            typeOptions: ['Any', 'REALLY LONG TYPE', 'type2', 'type3', 'Remove all entries as test filter'],
+            typeOptions: ['Any', 'REALLY LONG TYPE', 'type2', 'type3', 'None'],
             tagOptions: ['Any', 'Sell', 'Value'],
-            items: [
-                new Item('Item10', 1300, '100BC', new Contact('Jason', '', 'jasongoodisondevelopment@gmail.com')),
-                new Item('Item11', 130, '1990', new Contact('Sahir', '', 'sahir@gmail.com')),
-                // {'name': 'Item1', 'price': 14.50, 'date': '1945'},
-                // {'name': 'Item2', 'price': 1.50, 'date': 'Unknown'},
-                // {'name': 'Item3', 'price': 1400.50, 'date': '1200'},
-                // {'name': 'Item4', 'price': 14, 'date': '2012'},
-                // {'name': 'Item5', 'price': 1.50, 'date': '2018'},
-                // {'name': 'Item6', 'price': 1400.50, 'date': 'Unknown'},
-                // {'name': 'Item7', 'price': 1.50, 'date': 'Unknown'},
-                // {'name': 'Item8', 'price': 1400.50, 'date': 'Unknown'},
-                // {'name': 'Item9', 'price': 1.50, 'date': 'Unknown'},
-                // {'name': 'Item10', 'price': 1400.50, 'date': 'Unknown'},
-            ],
+            items: fetchedItems,
+            displayItems: fetchedItems,
             defaultOption: 'Any'
         };
       }
@@ -36,8 +38,11 @@ class Buy extends Component {
     onTypeChange = (event) => {
         console.log("On type change")
         // filter the list
-        if (event.value == 'Remove all entries as test filter') {
-            this.setState({items: []})
+        if (event.value == 'None') {
+            this.setState({displayItems: []})
+        }
+        if (event.value == 'Any') {
+            this.setState({displayItems: this.state.items})
         }
     };
 
@@ -66,7 +71,7 @@ class Buy extends Component {
                     </div>
                 </div>
                 {/* This is where you need to do filtering optionss*/}
-                {this.state.items.map ((item, index) => (
+                {this.state.displayItems.map ((item, index) => (
                     <ItemComponent item={item} key={index}/>
                 ))}
             </div>
