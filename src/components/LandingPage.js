@@ -10,9 +10,12 @@ function LandingPage() {
             <div class="hero-text">
             <div> {CompanyName} </div>
             <Link to='/buy'>
-              <Button variant="outline-light" style={{marginRight: 20}}>Buy</Button>
+               <Button variant="outline-light" style={{marginRight: 20}}>Buy</Button>
             </Link>
-            <Button variant="outline-light">Sell</Button>
+            <Link to='/sell'>
+              <Button variant="outline-light">Sell</Button>
+            </Link>
+            
             </div>
         </div>
         <Moreinfo/>
