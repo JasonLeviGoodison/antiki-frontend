@@ -1,5 +1,5 @@
 import React from 'react';
-import { CompanyName } from '../App.js';
+import { CompanyName } from './App.js';
 
 function Moreinfo() {
   return (
@@ -12,7 +12,7 @@ function Moreinfo() {
                 or you can try to buy the perfect piece that will tie a room together.
             </p>
         </div>
-        <div class="parallax"> </div>
+        <div className="parallax"> </div>
         <div style={{margin: 70}} >
             <h4> Technology </h4>
             <p style={{ margin: 25 }} >

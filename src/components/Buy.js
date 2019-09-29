@@ -1,12 +1,10 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { Component } from 'react';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css'
-// import { CompanyName } from '../App.js';
-// import Button from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
 import ItemComponent from '../components/ItemComponent';
 import Item from '../classes/Item';
 import Contact from '../classes/Contact';
+//import * as firebase from 'firebase';
 
 class Buy extends Component {
     constructor(props) {
@@ -38,10 +36,10 @@ class Buy extends Component {
     onTypeChange = (event) => {
         console.log("On type change")
         // filter the list
-        if (event.value == 'None') {
+        if (event.value === 'None') {
             this.setState({displayItems: []})
         }
-        if (event.value == 'Any') {
+        if (event.value === 'Any') {
             this.setState({displayItems: this.state.items})
         }
     };
@@ -50,15 +48,25 @@ class Buy extends Component {
         console.log("On tag change")
     };
 
+    componentDidMount() {
+        // const rootRef = firebase.database().ref().child('antiki');
+        // const itemRef = rootRef.child('items');
+        // itemRef.on('value', snap => {
+        //     console.log("snapval is ", snap.val())
+        //     this.setState({
+        //     })
+        // });
+    }
+
     render() {
+        console.log(this.state.displayItems)
         return (
             <div>
                 <h1 style={{paddingTop: 75}}>
                     Recently added
                 </h1>
-                <div className="filteringOptions">
-                    
-                    {/* <span style={{ width: '100%'}}> Filtering options: </span> */}
+                <div className="filteringOptions">  
+                    {/*<button onClick={}>Sign in</button> <span style={{ width: '100%'}}> Filtering options: </span> */}
                     <div style={{width: 'fit-content', display: 'flex'}}>
                         <div>
                             Type:
@@ -71,7 +79,7 @@ class Buy extends Component {
                     </div>
                 </div>
                 {/* This is where you need to do filtering optionss*/}
-                {this.state.displayItems.map ((item, index) => (
+                {this.state.displayItems && this.state.displayItems.map ((item, index) => (
                     <ItemComponent item={item} key={index}/>
                 ))}
             </div>

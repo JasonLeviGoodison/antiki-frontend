@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-// import Button from 'react-bootstrap/Button';
-import Item from '../classes/Item';
-import Contact from '../classes/Contact';
 
 class ItemComponent extends Component {
     render() {
