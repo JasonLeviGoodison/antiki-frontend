@@ -1,3 +1,7 @@
+/*
+    Code largely taken from psatler/react-firebase-authentication on Github
+*/
+
 import React, { useState, useEffect, Component } from 'react';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css'

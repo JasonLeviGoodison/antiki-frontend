@@ -1,3 +1,7 @@
+/*
+    Code largely taken from psatler/react-firebase-authentication on Github
+*/
+
 import React from "react";
 import { withRouter } from "react-router-dom";
 

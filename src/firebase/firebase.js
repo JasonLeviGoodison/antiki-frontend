@@ -1,3 +1,7 @@
+/*
+    Code largely taken from psatler/react-firebase-authentication on Github
+*/
+
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/database";

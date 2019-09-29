@@ -1,3 +1,7 @@
+/*
+    Code largely taken from psatler/react-firebase-authentication on Github
+*/
+
 import { auth, facebookProvider } from "./firebase"; //importing the previously instatiated object from the firebase.js config file
 
 //## below the authentication functions ##

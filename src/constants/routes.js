@@ -1,3 +1,7 @@
+/*
+    Code largely taken from psatler/react-firebase-authentication on Github
+*/
+
 export const SIGN_UP = "/signup";
 export const SIGN_IN = "/signin";
 export const LANDING = "/";

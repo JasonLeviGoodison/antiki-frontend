@@ -1,3 +1,7 @@
+/*
+    Code largely taken from psatler/react-firebase-authentication on Github
+*/
+
 //this is going to store Firebase realtime database API code
 import { db } from "./firebase";
 
