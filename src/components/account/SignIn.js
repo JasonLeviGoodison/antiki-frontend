@@ -3,7 +3,7 @@
 */
 
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input, Alert } from "reactstrap";
+import { Button, Form, FormGroup, Input, Alert } from "reactstrap";
 import { FacebookLoginButton } from "react-social-login-buttons";
 
 import { withRouter } from "react-router-dom";
@@ -16,8 +16,8 @@ import * as routes from "../../constants/routes";
 const SignInPage = ({ history }) => {
   return (
     <div className="div-flex">
-      <div>
-        <h1 className="centered">Sign In</h1>
+      <div className="marginTop60">
+        <h1>Sign In</h1>
         <SignInForm history={history} />
         <SignUpLink />
         {/* TODO !!!!!!! <PasswordForgetLink />*/}
@@ -111,12 +111,11 @@ class SignInForm extends Component {
 
         <Form onSubmit={this.onSubmit}>
           <FormGroup>
-            <Label for="exampleEmail">Email</Label>
             <Input
               type="email"
               name="email"
               id="exampleEmail"
-              placeholder="user@gmail.com"
+              placeholder="Email"
               value={email}
               onChange={event =>
                 this.setState(byPropKey("email", event.target.value))
@@ -124,12 +123,11 @@ class SignInForm extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="examplePassword">Password</Label>
             <Input
               type="password"
               name="password"
               id="examplePassword"
-              placeholder="pass-test"
+              placeholder="Password"
               value={password}
               onChange={event =>
                 this.setState(byPropKey("password", event.target.value))

@@ -6,7 +6,6 @@ export default class Item {
         this.price = price;
         this.date = date;
         this.contact = contact;
-        this.id = id;
-        this.link = ''
+        this.id = id; // This should also be the link param
     }
 }

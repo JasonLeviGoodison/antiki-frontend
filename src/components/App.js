@@ -12,7 +12,8 @@ import SignUpPage from "./account/SignUp"
 import withAuthentication from "./account/withAuthentication";
 import * as routes from "../constants/routes";
 
-export var CompanyName = "Antiki"
+export var CompanyName = "Vintage"
+export var TagLine = "Unique Collectables and Antiques"
 class App extends Component {
   render() {
     return (

@@ -4,7 +4,7 @@
 
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-import { Button, Form, FormGroup, Label, Input, Alert } from "reactstrap";
+import { Button, Form, FormGroup, Input, Alert } from "reactstrap";
 
 import * as routes from "../../constants/routes";
 import { auth, db } from "../../firebase";
@@ -12,7 +12,7 @@ import { auth, db } from "../../firebase";
 const SignUpPage = ({ history }) => (
   <div>
     <div className="div-flex">
-      <div>
+      <div className="marginTop60">
         <h1 className="centered">Sign Up</h1>
         <SignUpForm history={history} />
       </div>
@@ -106,12 +106,11 @@ class SignUpForm extends Component {
         )}
         <Form onSubmit={this.onSubmit}>
           <FormGroup>
-            <Label for="userName">Full Name</Label>
             <Input
               type="username"
               name="username"
               id="userName"
-              placeholder="John Doe"
+              placeholder="First and Last Name"
               value={username}
               onChange={e =>
                 this.setState(byPropKey("username", e.target.value))
@@ -119,18 +118,16 @@ class SignUpForm extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="exampleEmail">Email</Label>
             <Input
               type="email"
               name="email"
               id="exampleEmail"
-              placeholder="user@gmail.com"
+              placeholder="Email"
               value={email}
               onChange={e => this.setState(byPropKey("email", e.target.value))}
             />
           </FormGroup>
           <FormGroup>
-            <Label for="examplePassword1">Password</Label>
             <Input
               type="password"
               name="password"
@@ -143,7 +140,6 @@ class SignUpForm extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="examplePassword2">Confirm Password</Label>
             <Input
               type="password"
               name="password"

@@ -15,6 +15,7 @@ function LandingPage() {
             <Link to='/sell'>
               <Button variant="outline-light">Sell</Button>
             </Link>
+            <p> ACTUALLLY PUT THE TOP CATEGORIES HERE </p>
             
             </div>
         </div>
