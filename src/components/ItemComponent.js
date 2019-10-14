@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap'
 
 class ItemComponent extends Component {
     render() {
@@ -7,10 +8,11 @@ class ItemComponent extends Component {
             <div>
                 <div className="buy-item">
                     <h1 className="buy-item-name"> { item.name } </h1>
-                    <h6 className="buy-item-other" style={{float: 'right', textAlign: 'right'}}> 
-                        Contact: <br/>
+                    <h6 className="buy-item-other" style={{float: 'right', textAlign: 'right'}}>
+                        <Button color="primary" > Contact Seller </Button>
+                        {/* Contact: <br/>
                         { item.contact.name } <br/>
-                        { item.contact.email } 
+                        { item.contact.email }  */}
                     </h6>
                     {/*Images can go here */}
                     <h6 className="buy-item-other"> 

@@ -14,11 +14,12 @@ class Buy extends Component {
         super(props);
         this.state = {
             typeOptions: ['Any', 'Jewlery', 'toys - break this down', 'equipment - break this down', 'silver/gold', 'Coins'],
-            datetrange: ['<1900', '1900', '1910', '1920', '1930', '1940', '1950', '1960', '>1970'],
-            tagOptions: ['Any', 'Sell', 'Value'],
+            dateOptions: ['Any', '<1900', '1900s', '1910s', '1920s', '1930s', '1940s', '1950s', '1960s', '>1970'],
+            tagOptions: ['Buy', 'Value'],
             items: [],
             searchType: 'Any',
-            searchTag: 'Any',
+            searchTag: 'Buy',
+            decade: 'Any',
         };
       }
 
@@ -27,6 +28,7 @@ class Buy extends Component {
             params: {
                 type: this.state.searchType,
                 tag: this.state.searchTag,
+                decade: this.state.decade,
             }
         })
         .then(response => {
@@ -56,6 +58,14 @@ class Buy extends Component {
         });
     };
 
+    onDateChange = (event) => {
+        this.setState({
+            decade: event.value
+        }, () => {
+            this.filterOptions();
+        });
+    };
+
     componentDidMount() {
         this.filterOptions();
     }
@@ -64,19 +74,23 @@ class Buy extends Component {
         return (
             <div>
                 <h1 style={{paddingTop: 75}}>
-                    Find what you're looking for
+                    Discover
                 </h1>
                 <div className="filteringOptions">  
                     {/*<button onClick={}>Sign in</button> <span style={{ width: '100%'}}> Filtering options: </span> */}
                     <div style={{width: 'fit-content', display: 'flex'}}>
-                        <div>
+                        <div style={{width: 150}}>
                             Type:
                             <Dropdown options={this.state.typeOptions} value={this.state.searchType} onChange={this.onTypeChange}/>
                         </div>
                         <div style={{ marginLeft: '10px'}}>
-                            Sell or Value
-                            <Dropdown options={this.state.tagOptions} value={this.state.searchTag} onChange={this.onTagChange}/>
+                            Decade:
+                            <Dropdown options={this.state.dateOptions} value={this.state.decade} onChange={this.onDateChange}/>
                         </div>
+                        {/* {<div style={{ marginLeft: '10px'}}>
+                            Buying or Valuing:
+                            <Dropdown options={this.state.tagOptions} value={this.state.searchTag} onChange={this.onTagChange}/>
+                        </div>} */}
                     </div>
                 </div>
                 {/* This is where you need to do filtering optionss*/}
