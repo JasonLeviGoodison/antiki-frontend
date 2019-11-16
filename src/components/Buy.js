@@ -17,7 +17,7 @@ class Buy extends Component {
             dateOptions: ['Any', '<1900', '1900s', '1910s', '1920s', '1930s', '1940s', '1950s', '1960s', '>1970'],
             tagOptions: ['Buy', 'Value'],
             items: [],
-            searchType: 'Any',
+            searchType: 'Coins',
             searchTag: 'Buy',
             decade: 'Any',
         };
@@ -67,6 +67,17 @@ class Buy extends Component {
     };
 
     componentDidMount() {
+        console.log(this.props)
+        if (this.props.location) {
+            var { searchType, decade } = this.props.location.state;
+            this.setState({
+                searchType,
+                decade
+            }, () => {
+                this.filterOptions();
+            });
+            return;
+        }
         this.filterOptions();
     }
 
